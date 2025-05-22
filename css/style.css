@@ -20,7 +20,7 @@ p::selection{
 /* ------ HEADER ------ */
 /* AQUI POST BOOTSTRAP */
 header{
-    background-color: black;
+    background-color: red;
 }
 
 header h1{
