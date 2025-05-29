@@ -1,0 +1,21 @@
+header{
+    background-color: $color-principal;
+    h1{
+        font-size: nth($font-size,5);
+        font-weight: 900;
+        color: $color-terciario;
+    }
+
+    nav{
+        ul{
+            background-color: $color-principal;
+            li{
+                margin: 10px;
+
+            }
+
+        }
+
+    }
+
+}

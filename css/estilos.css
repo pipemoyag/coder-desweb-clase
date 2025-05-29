@@ -1,0 +1,133 @@
+.boton, .hero a {
+  text-decoration: none;
+  color: white;
+  background-color: black;
+  font-size: 15px;
+}
+
+.boton {
+  border: 2px solid white;
+  color: white;
+}
+.boton:hover {
+  background-color: rgb(165, 23, 23);
+}
+
+header {
+  background-color: black;
+}
+header h1 {
+  font-size: 60px;
+  font-weight: 900;
+  color: white;
+}
+header nav ul {
+  background-color: black;
+}
+header nav ul li {
+  margin: 10px;
+}
+
+/* INDEX */
+.hero {
+  text-align: center;
+  height: 70vh;
+  background-image: url(../img/banner.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  color: black;
+  flex-direction: column;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.hero h2 {
+  font-size: 60px;
+  border: 3px solid white;
+  display: inline-block;
+  padding: 15px;
+}
+.hero p {
+  font-size: 20px;
+}
+.hero a {
+  padding: 10px;
+}
+
+.bienvenidos {
+  margin: 15px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.bienvenidos div {
+  width: 50%;
+}
+.bienvenidos div h2 {
+  font-size: 40px;
+}
+.bienvenidos div h2::first-letter {
+  font-size: 60px;
+  color: rgb(165, 23, 23);
+  font-weight: 900;
+  font-style: italic;
+}
+.bienvenidos img {
+  width: 400px;
+  height: 500px;
+}
+
+@media screen and (max-width: 945px) {
+  .bienvenidos {
+    flex-direction: column;
+    padding: 30px;
+  }
+  .bienvenidos img {
+    /* PARA QUE DESAPAREZCA IMAGEN */
+    display: none;
+  }
+  .bienvenidos div {
+    width: 80%;
+  }
+  .grid-galeria {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 220px;
+  }
+  .grid-item {
+    /* para revertir spans */
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+}
+@media screen and (max-width: 650px) {
+  .hero h2 {
+    font-size: 40px;
+    padding: 10px;
+  }
+  .hero p {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 510px) {
+  .grid-galeria {
+    grid-template-columns: 1fr;
+  }
+}
+/* @media screen and (max-width:486px){
+    header{
+        flex-direction: column;
+    }
+} */
+@media screen and (max-width: 433px) {
+  .hero h2 {
+    font-size: 30px;
+    padding: 5px;
+  }
+  .hero p {
+    font-size: 16px;
+  }
+}
+
+/*# sourceMappingURL=estilos.css.map */

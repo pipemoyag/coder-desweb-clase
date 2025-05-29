@@ -1,0 +1,54 @@
+
+/* INDEX */
+.hero{
+    text-align: center;
+    height: 70vh;
+    background-image: url(../img/banner.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    color: black;
+    flex-direction: column;
+    @include flex(flex, space-around, center);
+    h2{
+        font-size: 60px;
+        border: 3px solid white;
+        display: inline-block;
+        padding: 15px;
+    }
+    p{
+        font-size: 20px;           
+    }
+    a{
+        @extend %boton;
+        padding: 10px;
+    }
+}
+
+.bienvenidos{
+    margin: 15px;
+    @include flex(flex, space-evenly, center);
+    div{
+        width: 50%;
+        h2{
+            font-size: 40px;
+            &::first-letter{
+                font-size: 60px;
+                color: rgb(165, 23, 23);
+                font-weight: 900;
+                font-style: italic;
+            }
+        }
+
+    }
+
+    img{
+        width: 400px;
+        height: 500px;
+    }
+}
+
+.boton{
+    @extend %boton;
+}

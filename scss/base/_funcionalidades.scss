@@ -1,0 +1,36 @@
+//* VARIABLES
+$color-principal: black;
+$color-secundario: rgb(161, 17, 17);
+$color-terciario: white;
+
+//* LISTAS, útiles cuando tengo muchas variables, agruparlas por tipo de variables (color, tamaños, etc)
+$colores:
+red,
+green,
+blue,
+tomato,
+pink;
+
+$font-size:
+12px,
+16px,
+20px,
+30px,
+60px;
+
+//* EXTENDS para agrupar props que utilizo frecuentemente
+
+%boton{
+    text-decoration: none;
+    color: white;
+    background-color: black;
+    font-size: 15px;
+}
+
+
+//* MIXIN, como EXTENDS con variables, en el fondo, una FUNCION
+@mixin flex($flex, $justify, $align){
+    display: $flex;
+    justify-content: $justify;
+    align-items: $align;
+}

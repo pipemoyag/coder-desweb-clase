@@ -1,0 +1,327 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Reset, para borrar configuracion base del navegador */
+/* El '*' quiere decir que se aplique para TODAS las etiquetas, idealmente SOLO para el reset */
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* se parte por el selector más general */
+body{
+    font-family: "Poppins", sans-serif;
+}
+
+/* PSEUDOELEMENTOS */
+p::selection{
+    background-color: rgb(165, 23, 23);
+}
+
+/* ------ HEADER ------ */
+/* AQUI POST BOOTSTRAP */
+header{
+    background-color: red;
+}
+
+header h1{
+    font-size: 60px;
+    font-weight: 900;
+    color: white;
+}
+
+header nav ul li{
+    margin: 10px;
+}
+
+.nav-link{
+    /* pisamos color de bootstrap */
+    color: white !important;
+}
+
+/* header nav ul li a{
+    text-decoration: none;
+    color: white !important;
+} */
+
+header nav ul li a:hover{
+    color: rgb(165, 23, 23);
+}
+
+.boton{
+    border: 2px solid white;
+    color: white;
+}
+
+.boton:hover{
+    background-color: rgb(165, 23, 23);
+}
+
+/* ------ MAIN ------ */
+
+/* ----PSEUDO CLASES ---- */
+
+.hero{
+    text-align: center;
+    height: 70vh; /* % de la pantalla como la vemos */
+    background-image: url(../img/banner.jpg);
+    background-size: cover; /* escala imagen sin deformarla, ajustada al contenedor */ 
+    background-repeat: no-repeat; /* para que imagen aparezca una sola vez */
+    background-position: center;
+    background-attachment: fixed; /* Dejar imagen estática mientras scrolleas */
+    color: black;
+
+    /* Aquí el flex queremos que sera vertical, no horizontal */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero h2{
+    font-size: 60px;
+    border: 3px solid white;
+    display: inline-block; /* Que caja pase a tener ancho del texto, no de pagina completa (en ausencia de flex) */
+    padding: 15px;
+}
+
+.hero p{
+    font-size: 20px;
+}
+
+.hero a{
+    /* Si bien no es necesario usar un display: inline-block aquí (porque ya es un elemento en linea), el no usarlo hará que pueda pasar por encima del elemento de bloque anterior (párrafo), al menos mientras el contenedor no tenga flexbox */
+    /* display: inline-block; */
+    text-decoration: none;
+    color: white;
+    background-color: black;
+    font-size: 15px;
+    padding: 10px;
+}
+
+.hero a:hover{
+    background-color: rgb(165, 23, 23);
+}
+
+/* div sirve para agrupar elementos que van a ser distribuidos luego con CSS */
+/* para que elementos se trabajen como grupo */
+.bienvenidos{
+    margin: 15px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.bienvenidos div{
+    width: 50%;
+}
+
+.bienvenidos div h2{
+    font-size: 40px;
+}
+
+/* PSEUDOELEMENTOS: '::' */
+/* Ejs: Estilo para 1ra letra de palabra, 1ra línea de un párrafo, cómo se va a ver al seleccionar texto, etc */
+
+.bienvenidos div h2::first-letter{
+    font-size: 60px;
+    color: rgb(165, 23, 23);
+    font-weight: 900;
+    font-style: italic;
+}
+
+.bienvenidos img{
+    width: 400px;
+    height: 500px;
+} 
+
+.destacados h2{
+    text-align: center;
+    font-size: 30px;
+    background-color: black;
+    color: white;
+    padding: 10px;
+}
+
+.destacados .destacados-contenedor{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.destacados .destacados-contenedor div{
+    border: 1px solid black;
+    /* en este caso puntual mejor NO usar display inline, porque luego necesitaremos usar un display flexbox, y no pueden haber 2 display, mejor usaremos width */
+    width: 250px;
+    height: 350px;
+    text-align: center;
+    margin: 15px;
+}
+
+.destacados div h3{
+    margin: 5px
+}
+
+.destacados div img{
+    width: 100%; /* respecto al contenedor padre */
+    height: 250px;
+}
+
+.destacados div a{
+    text-decoration: none;
+    color: white;
+    background-color: black;
+    padding: 5px;
+}
+
+.destacados div a:active{
+    background-color: rgb(165, 23, 23);
+}
+
+.fixed{
+    position: fixed;
+    bottom: 50px;
+    right: 20px;
+}
+
+/* Unidades relativas
+%   -> relativa al tamaño del contenedor (ej img 50%, es 50% del padre)
+vh  -> viewport heigth, referencia al alto de la pantalla en diferentes dispositivos
+*/
+
+/* ------ GRIDS ------ */
+.grid-galeria{
+    /* border: solid 4px #dd4a48; */
+    margin: 5px;
+    display:grid;
+    /* grid-template-columns: 2fr 1fr 1fr; */
+    grid-template-columns: repeat(3, 1fr); /* Este es como el width */
+    /* grid-template-rows: repeat(3, 200px); /* Este es como el height */
+    /* opcion de generar automaticamente filas con base a cantidad items */
+    grid-auto-rows: 250px;
+    gap: 10px;
+}
+
+/* .grid-item{
+    border: solid 2px #af091d;
+    background-color: burlywood;
+} */
+
+.img-4{
+    /* span 2 hace referencia a que 'desde donde estás, expandete a 2 cols' */
+    grid-column: span 2;
+}
+
+.img-6{
+    grid-row: span 2;
+}
+
+.grid-galeria div img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.grid-item{
+    position: relative;
+}
+
+.grid-item h3{
+    position: absolute;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    
+    color: white;
+    width: 100%;
+    text-align: center;
+}
+
+/* PSEUDOCLASE PARA HIJOS */
+/* 'odd' impares, 'even' pares, '3n'->cada 3, partiendo del 3 */
+.cajas div:nth-child(3n){
+    background-color: aqua;
+}
+
+/* ------ FOOTER ------ */
+footer{
+    padding: 20px;
+    background-color: rgb(145, 145, 145);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+footer i{
+    color: black;
+    font-size: 20px;
+}
+
+footer i:hover{
+    color: rgb(165, 23, 23);
+}
+
+/* ------ MEDIA QUERIES ------ */
+@media screen and (max-width: 945px) {
+    .bienvenidos{
+        flex-direction: column;
+        padding: 30px;
+    }
+
+    .bienvenidos img{
+        /* PARA QUE DESAPAREZCA IMAGEN */
+        display: none; 
+    }
+
+    .bienvenidos div{
+        width: 80%;
+    }
+
+    .grid-galeria{
+        grid-template-columns: repeat(2, 1fr); 
+        grid-auto-rows: 220px;
+    }
+    
+    .grid-item{
+        /* para revertir spans */
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+}
+
+@media screen and (max-width:650px) {
+    .hero h2{
+        font-size: 40px;
+        padding: 10px;
+    }
+
+    .hero p{
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 510px) {
+    .grid-galeria{
+        grid-template-columns: 1fr;
+    }
+}
+
+/* @media screen and (max-width:486px){
+    header{
+        flex-direction: column;
+    }
+} */
+
+@media screen and (max-width: 433px) {
+    .hero h2{
+        font-size: 30px;
+        padding: 5px;
+    }
+
+    .hero p{
+        font-size: 16px;
+    }
+}
+
+/* OTRAS PSEUDOCLASES */
+
+/* :visted, para el estilo del hipervinculo post haberlo visitado (como el lila de enlaces) */
